@@ -1,4 +1,4 @@
-FROM ghcr.io/ublue-os/silverblue-main:latest
+FROM quay.io/fedora/fedora-kinoite:41
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:stable
