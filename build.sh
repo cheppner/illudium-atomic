@@ -12,14 +12,6 @@ set -ouex pipefail
 # this installs a package from fedora repos
 
 
-dnf install -y tmux 
-dnf install -y steam
-dnf install -y gamescope
-dnf install -y mangohud
-dnf install -y goverlay
-dnf install -y btop
-dnf install -y rocm-smi
-dnf install -y google-noto-* --allowerasing --skip-broken
 dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 dnf install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 dnf config-manager setopt fedora-cisco-openh264.enabled=1
@@ -29,8 +21,16 @@ dnf swap mesa-va-drivers mesa-va-drivers-freeworld
 dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
 dnf swap mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686
 dnf swap mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686
-dnf install -y rpmfusion-nonfree-release-tainted
+#dnf install -y rpmfusion-nonfree-release-tainted
 # todo - add VSCODE
+dnf install -y tmux 
+dnf install -y steam
+dnf install -y gamescope
+dnf install -y mangohud
+dnf install -y goverlay
+dnf install -y btop
+dnf install -y rocm-smi
+dnf install -y google-noto-* --allowerasing --skip-broken
 dnf -y copr enable ilyaz/LACT
 dnf -y copr enable lizardbyte/stable
 dnf install -y lact
