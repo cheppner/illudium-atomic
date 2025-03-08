@@ -22,15 +22,6 @@ dnf -y install scx-scheds
 dnf -y copr disable bieszczaders/kernel-cachyos-addons
 dnf -y copr disable bieszczaders/kernel-cachyos
 
-# cachyos kernel addons
-dnf -y copr enable bieszczaders/kernel-cachyos-addons
-dnf -y install libcap-ng libcap-ng-devel procps-ng procps-ng-devel
-dnf -y install uksmd
-systemctl enable uksmd.service
-dnf -y install scx-scheds
-systemctl enable scx.service
-dnf -y copr disable bieszczaders/kernel-cachyos-addons
-
 # dedupe
 
 # install packages
