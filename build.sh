@@ -11,7 +11,29 @@ set -ouex pipefail
 
 # this installs a package from fedora repos
 
+# enable selinux policy to allow kernel modules
+setsebool -P domain_kernel_load_modules on
 
+# install cachyos kernel
+dnf -y copr enable bieszczaders/kernel-cachyos
+dnf -y copr enable bieszczaders/kernel-cachyos-addons
+dnf -y install kernel-cachyos kernel-cachyos-devel-matched
+dnf -y install scx-scheds
+dnf -y copr disable bieszczaders/kernel-cachyos-addons
+dnf -y copr disable bieszczaders/kernel-cachyos
+
+# cachyos kernel addons
+dnf -y copr enable bieszczaders/kernel-cachyos-addons
+dnf -y install libcap-ng libcap-ng-devel procps-ng procps-ng-devel
+dnf -y install uksmd
+systemctl enable --now uksmd.service
+dnf -y install scx-scheds
+systemctl enable --now scx.service
+dnf -y copr disable bieszczaders/kernel-cachyos-addons
+
+# dedupe
+
+# install packages
 dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 dnf install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 dnf -y config-manager setopt fedora-cisco-openh264.enabled=1
@@ -38,6 +60,11 @@ dnf install -y Sunshine
 dnf -y copr disable ilyaz/LACT
 dnf -y copr disable lizardbyte/stable
 
+# VSCode
+rpm --import https://packages.microsoft.com/keys/microsoft.asc
+echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | tee /etc/yum.repos.d/vscode.repo > /dev/null
+dnf -y check-update
+dnf -y install code
 
 # Use a COPR Example:
 #
