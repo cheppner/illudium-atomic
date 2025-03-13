@@ -37,7 +37,7 @@ dnf -y swap mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686
 #dnf install -y rpmfusion-nonfree-release-tainted
 # todo - add VSCODE
 
-sudo dnf5 -y install \
+dnf5 -y install \
                     firefox \
                     steam \
                     gamescope \
@@ -60,26 +60,26 @@ dnf -y check-update
 #dnf -y install code
 
 # install packages from Nobara COPR
-sudo dnf5 -y copr enable gloriouseggroll/nobara-41
-sudo dnf5 -y install umu-launcher \
+dnf5 -y copr enable gloriouseggroll/nobara-41
+dnf5 -y install umu-launcher \
                      starship
-sudo dnf5 -y copr disable gloriouseggroll/nobara-41
+dnf5 -y copr disable gloriouseggroll/nobara-41
 
 # Install and enable System76 scheduler
-sudo dnf5 -y copr enable kylegospo/system76-scheduler
-sudo dnf5 -y install system76-scheduler
-sudo systemctl enable com.system76.Scheduler.service
-sudo dnf5 -y copr disable kylegospo/system76-scheduler
+dnf5 -y copr enable kylegospo/system76-scheduler
+dnf5 -y install system76-scheduler
+systemctl enable com.system76.Scheduler.service
+dnf5 -y copr disable kylegospo/system76-scheduler
 
 # Install sunshine
-sudo dnf5 -y copr enable lizardbyte/stable
-sudo dnf5 -y install Sunshine
+dnf5 -y copr enable lizardbyte/stable
+dnf5 -y install Sunshine
 
 # Install and enable LACT
-sudo dnf5 -y copr enable ilyaz/LACT
-sudo dnf5 -y install lact
-sudo systemctl enable lactd
-sudo dnf5 -y copr disable ilyaz/LACT
+dnf5 -y copr enable ilyaz/LACT
+dnf5 -y install lact
+systemctl enable lactd
+dnf5 -y copr disable ilyaz/LACT
 
 # Enable flatpak repo
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
