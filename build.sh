@@ -27,31 +27,31 @@ setsebool -P domain_kernel_load_modules on
 # install packages
 dnf5 install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 dnf5 install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-dnf5 -y config-manager setopt fedora-cisco-openh264.enabled=1
+# dnf5 -y config-manager setopt fedora-cisco-openh264.enabled=1
 dnf5 update -y
-dnf5 -y swap ffmpeg-free ffmpeg --allowerasing
-dnf5 -y swap mesa-va-drivers mesa-va-drivers-freeworld
-dnf5 -y swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
-dnf5 -y swap mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686
-dnf5 -y swap mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686
+# dnf5 -y swap ffmpeg-free ffmpeg --allowerasing
+# dnf5 -y swap mesa-va-drivers mesa-va-drivers-freeworld
+# dnf5 -y swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
+# dnf5 -y swap mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686
+# dnf5 -y swap mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686
 #dnf install -y rpmfusion-nonfree-release-tainted
 # todo - add VSCODE
 
 dnf5 -y install \
-                    firefox \
-                    steam \
-                    gamescope \
-                    mangohud \
+                   # firefox \
+                   # steam \
+                   # gamescope \
+                   # mangohud \
                     goverlay \
-                    btop \
-                    rocm-smi \
-                    source-foundry-hack-fonts \
+                   # btop \
+                   # rocm-smi \
+                   # source-foundry-hack-fonts \
                     kate \
                     vlc \
                     krita \
-                    fastfetch \
-                    tmux \
-                    unifont-fonts
+                   # fastfetch \
+                   # tmux \
+                   # unifont-fonts
 
 # VSCode
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -66,10 +66,10 @@ dnf5 -y check-update
 # dnf5 -y copr disable gloriouseggroll/nobara-41
 
 # Install and enable System76 scheduler
-dnf5 -y copr enable kylegospo/system76-scheduler
-dnf5 -y install system76-scheduler
-systemctl enable com.system76.Scheduler.service
-dnf5 -y copr disable kylegospo/system76-scheduler
+# dnf5 -y copr enable kylegospo/system76-scheduler
+# dnf5 -y install system76-scheduler
+# systemctl enable com.system76.Scheduler.service
+# dnf5 -y copr disable kylegospo/system76-scheduler
 
 # Install sunshine
 dnf5 -y copr enable lizardbyte/stable
@@ -82,10 +82,10 @@ systemctl enable lactd
 dnf5 -y copr disable ilyaz/LACT
 
 # Enable flatpak repo
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+# flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Install flatpaks
-flatpak install -y --noninteractive flathub net.davidotek.pupgui2
+# flatpak install -y --noninteractive flathub net.davidotek.pupgui2 # protonup-qt
 
 # Use a COPR Example:
 #
