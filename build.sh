@@ -37,7 +37,7 @@ setsebool -P domain_kernel_load_modules on
 #dnf install -y rpmfusion-nonfree-release-tainted
 # todo - add VSCODE
 
-dnf5 -y install \
+dnf5 -y install kate vlc krita
                    # firefox \
                    # steam \
                    # gamescope \
@@ -46,9 +46,9 @@ dnf5 -y install \
                    # btop \
                    # rocm-smi \
                    # source-foundry-hack-fonts \
-                    kate \
-                    vlc \
-                    krita 
+                   # kate \
+                   # vlc \
+                   # krita 
                    # fastfetch \
                    # tmux \
                    # unifont-fonts
