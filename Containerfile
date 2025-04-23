@@ -1,4 +1,5 @@
-FROM quay.io/fedora/fedora-kinoite:41
+#FROM quay.io/fedora/fedora-kinoite:41
+FROM ghcr.io/ublue-os/bazzite
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:stable
