@@ -48,7 +48,7 @@ dnf5 -y install \
                    # source-foundry-hack-fonts \
                     kate \
                     vlc \
-                    krita \
+                    krita 
                    # fastfetch \
                    # tmux \
                    # unifont-fonts
