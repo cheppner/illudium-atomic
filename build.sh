@@ -37,18 +37,18 @@ dnf5 update -y
 #dnf install -y rpmfusion-nonfree-release-tainted
 # todo - add VSCODE
 
-dnf5 -y install \
+# dnf5 -y install \
                    # firefox \
                    # steam \
                    # gamescope \
                    # mangohud \
-                    goverlay \
+                   # goverlay \
                    # btop \
                    # rocm-smi \
                    # source-foundry-hack-fonts \
-                    kate \
-                    vlc \
-                    krita 
+                   # kate \
+                   # vlc \
+                   # krita 
                    # fastfetch \
                    # tmux \
                    # unifont-fonts
