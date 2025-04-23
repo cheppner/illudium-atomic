@@ -28,7 +28,7 @@ setsebool -P domain_kernel_load_modules on
 dnf5 install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 dnf5 install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # dnf5 -y config-manager setopt fedora-cisco-openh264.enabled=1
-dnf5 update -y
+#dnf5 update -y
 # dnf5 -y swap ffmpeg-free ffmpeg --allowerasing
 # dnf5 -y swap mesa-va-drivers mesa-va-drivers-freeworld
 # dnf5 -y swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
