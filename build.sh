@@ -25,10 +25,10 @@ setsebool -P domain_kernel_load_modules on
 # dedupe
 
 # install packages
-dnf5 install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-dnf5 install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+# dnf5 install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+# dnf5 install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # dnf5 -y config-manager setopt fedora-cisco-openh264.enabled=1
-#dnf5 update -y
+# dnf5 update -y
 # dnf5 -y swap ffmpeg-free ffmpeg --allowerasing
 # dnf5 -y swap mesa-va-drivers mesa-va-drivers-freeworld
 # dnf5 -y swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
@@ -54,9 +54,9 @@ dnf5 install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-r
                    # unifont-fonts
 
 # VSCode
-rpm --import https://packages.microsoft.com/keys/microsoft.asc
-echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | tee /etc/yum.repos.d/vscode.repo > /dev/null
-dnf5 -y check-update
+# rpm --import https://packages.microsoft.com/keys/microsoft.asc
+# echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | tee /etc/yum.repos.d/vscode.repo > /dev/null
+# dnf5 -y check-update
 #dnf -y install code
 
 # install packages from Nobara COPR
